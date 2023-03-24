@@ -38,8 +38,6 @@ const options = {
 function useComputerOptions() {
   const display = useDisplaySize();
 
-  console.log({ display });
-
   if (!display) {
     return options.md();
   }

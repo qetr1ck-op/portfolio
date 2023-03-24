@@ -23,7 +23,7 @@ import {
   jobit,
   tripguide,
   threejs,
-} from "../assets";
+} from "../public/assets";
 
 export const author = {
   name: "Orest",
@@ -46,22 +46,23 @@ export const navLinks = [
   },
 ];
 
+// TODO: generate own images
 const services = [
   {
-    title: "Web Developer",
-    icon: web,
+    title: "JS | TS Developer",
+    icon: "/assets/web.png",
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    title: "React Developer",
+    icon: "/assets/mobile.png",
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "Full Stack Developer",
+    icon: "/assets/backend.png",
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    title: "Tech Lead",
+    icon: "/assets/creator.png",
   },
 ];
 

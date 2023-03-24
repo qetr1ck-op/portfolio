@@ -1,22 +1,62 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
-import { author, navLinks } from '@/constants';
-import { logo, menu, close } from '@/assets';
-import { useState } from 'react';
+import { author, navLinks } from "@/constants";
+import { logo, menu, close } from "@/public/assets";
+import { useEffect, useState } from "react";
+import { useIsServer } from "@/hooks/is-server";
 
 const useRouterHash = () => {
-  return window?.location.hash.split('#')[1];
+  const isServer = useIsServer();
+
+  if (isServer) {
+    return "";
+  }
+  return window?.location.hash.split("#")[1];
+};
+
+export function debounce<F extends (...params: any[]) => void>(
+  fn: F,
+  delay: number = 30
+) {
+  let timeoutID: number;
+  return function (this: any, ...args: any[]) {
+    clearTimeout(timeoutID);
+    timeoutID = window.setTimeout(() => fn.apply(this, args), delay);
+  } as F;
+}
+
+const useIsScrolled = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const debouncedHandleScroll = debounce(function handleScroll() {
+      setIsScrolled(window.scrollY > 100);
+    });
+
+    window.addEventListener("scroll", debouncedHandleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", debouncedHandleScroll);
+    };
+  }, []);
+
+  return isScrolled;
 };
 
 export function Navigation() {
   const [routerHash, setRouterHash] = useState(useRouterHash());
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const isScrolled = useIsScrolled();
 
   return (
-    <nav className="w-full py-5 px-6 sm:px-16 bg-transparent fixed top-0 z-20 flex items-center">
+    <nav
+      className={`w-full py-5 px-6 sm:px-16  fixed top-0 z-20 flex items-center ${
+        isScrolled ? "bg-black" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl w-full flex justify-between items-center mx-auto">
         <Link href="/" className="flex items-center">
           <Image src={logo} alt="logo" width="50" height="50" />
@@ -30,7 +70,9 @@ export function Navigation() {
           {navLinks.map(({ id, title }) => (
             <li
               key={id}
-              className={`${routerHash === id ? 'text-white' : 'text-secondary'} hover:text-white`}
+              className={`${
+                routerHash === id ? "text-white" : "text-secondary"
+              } hover:text-white`}
             >
               <Link
                 href={`#${id}`}
@@ -61,7 +103,7 @@ export function Navigation() {
                   <li
                     key={id}
                     className={`${
-                      routerHash === id ? 'text-white' : 'text-secondary'
+                      routerHash === id ? "text-white" : "text-secondary"
                     } hover:text-white`}
                   >
                     <Link

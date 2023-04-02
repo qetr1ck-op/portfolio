@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation";
 import { Welcome } from "@/components/welcome";
 import { Overview } from "@/components/overview";
+import { Experience } from "@/components/experience";
 
 export default function RootPage() {
   return (
@@ -11,6 +12,7 @@ export default function RootPage() {
       </div>
       <main>
         <Overview />
+        <Experience />
       </main>
     </div>
   );

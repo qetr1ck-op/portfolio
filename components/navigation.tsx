@@ -58,13 +58,13 @@ export function Navigation() {
       }`}
     >
       <div className="max-w-7xl w-full flex justify-between items-center mx-auto">
-        <Link href="/" className="flex items-center">
+        <a href="/" className="flex items-center">
           <Image src={logo} alt="logo" width="50" height="50" />
           <p className="flex text-white text-lg font-medium cursor-pointer">
             <span>{author.name}&nbsp;</span>
             <span className="hidden sm:block">| {author.details}</span>
           </p>
-        </Link>
+        </a>
         {/* TODO: remove duplication with mobile */}
         <ul className="hidden sm:flex gap-10 text-lg">
           {navLinks.map(({ id, title }) => (
@@ -74,14 +74,14 @@ export function Navigation() {
                 routerHash === id ? "text-white" : "text-secondary"
               } hover:text-white`}
             >
-              <Link
+              <a
                 href={`#${id}`}
                 onClick={() => {
                   setRouterHash(id);
                 }}
               >
                 {title}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation";
 import { Welcome } from "@/components/welcome";
 import { Overview } from "@/components/overview";
 import { Experience } from "@/components/experience";
+import { TechStack } from "@/components/tech-stack";
 
 export default function RootPage() {
   return (
@@ -13,6 +14,7 @@ export default function RootPage() {
       <main>
         <Overview />
         <Experience />
+        <TechStack />
       </main>
     </div>
   );

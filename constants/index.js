@@ -1,21 +1,4 @@
-import {
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-} from "../public/assets";
+import { carrent, jobit, tripguide } from "../public/assets";
 
 export const author = {
   name: "Orest",
@@ -60,56 +43,128 @@ const services = [
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "javascript",
+    icon: "/assets/tech/javascript.svg",
   },
   {
-    name: "CSS 3",
-    icon: css,
+    name: "typescript",
+    icon: "/assets/tech/typescript.svg",
   },
   {
-    name: "JavaScript",
-    icon: javascript,
+    name: "react",
+    icon: "/assets/tech/react.svg",
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    name: "next-js",
+    icon: "/assets/tech/next-js.svg",
   },
   {
-    name: "React JS",
-    icon: reactjs,
+    name: "redux",
+    icon: "/assets/tech/redux.svg",
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "mobX",
+    icon: "/assets/tech/mobx.png",
   },
   {
-    name: "Tailwind CSS",
-    icon: tailwind,
+    name: "d3",
+    icon: "/assets/tech/d3.svg",
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    name: "ionic",
+    icon: "/assets/tech/ionic.svg",
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "angular",
+    icon: "/assets/tech/angular.svg",
   },
   {
-    name: "Three JS",
-    icon: threejs,
+    name: "RxJS",
+    icon: "/assets/tech/rxjs.png",
+  },
+  {
+    name: "storybook",
+    icon: "/assets/tech/storybook.svg",
+  },
+  {
+    name: "Cypress",
+    icon: "/assets/tech/cypress.png",
+  },
+  {
+    name: "jest",
+    icon: "/assets/tech/jest.svg",
+  },
+  {
+    name: "node-js",
+    icon: "/assets/tech/node-js.svg",
+  },
+  {
+    name: "express-js",
+    icon: "/assets/tech/express-js.svg",
+  },
+  {
+    name: "nest-js",
+    icon: "/assets/tech/nest-js.svg",
+  },
+  {
+    name: "graphQL",
+    icon: "/assets/tech/graphQL.svg",
+  },
+  {
+    name: "postgresql",
+    icon: "/assets/tech/postgresql.svg",
+  },
+  {
+    name: "mongoDB",
+    icon: "/assets/tech/mongodb.png",
+  },
+  {
+    name: "trpc",
+    icon: "/assets/tech/trpc.svg",
+  },
+  {
+    name: "sequelize",
+    icon: "/assets/tech/sequelize.png",
+  },
+  {
+    name: "hasura",
+    icon: "/assets/tech/hasura.webp",
+  },
+  {
+    name: "sass",
+    icon: "/assets/tech/sass.svg",
+  },
+  {
+    name: "material-UI",
+    icon: "/assets/tech/material-UI.svg",
+  },
+  {
+    name: "bootstrap",
+    icon: "/assets/tech/bootstrap.svg",
+  },
+  {
+    name: "tailwindCSS",
+    icon: "/assets/tech/tailwind.png",
   },
   {
     name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
+    icon: "/assets/tech/git.png",
   },
   {
     name: "docker",
-    icon: docker,
+    icon: "/assets/tech/docker.png",
+  },
+  {
+    name: "webpack",
+    icon: "/assets/tech/webpack.svg",
+  },
+  {
+    name: "eslint",
+    icon: "/assets/tech/eslint.svg",
+  },
+  {
+    name: "Prettier",
+    icon: "/assets/tech/pretiier.jpeg",
   },
 ];
 

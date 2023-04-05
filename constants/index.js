@@ -67,20 +67,8 @@ const technologies = [
     icon: "/assets/tech/mobx.png",
   },
   {
-    name: "d3",
-    icon: "/assets/tech/d3.svg",
-  },
-  {
-    name: "ionic",
-    icon: "/assets/tech/ionic.svg",
-  },
-  {
     name: "angular",
     icon: "/assets/tech/angular.svg",
-  },
-  {
-    name: "RxJS",
-    icon: "/assets/tech/rxjs.png",
   },
   {
     name: "storybook",
@@ -109,6 +97,22 @@ const technologies = [
   {
     name: "graphQL",
     icon: "/assets/tech/graphQL.svg",
+  },
+  {
+    name: "d3",
+    icon: "/assets/tech/d3.svg",
+  },
+  {
+    name: "ionic",
+    icon: "/assets/tech/ionic.svg",
+  },
+  {
+    name: "angular",
+    icon: "/assets/tech/angular.svg",
+  },
+  {
+    name: "RxJS",
+    icon: "/assets/tech/rxjs.png",
   },
   {
     name: "postgresql",

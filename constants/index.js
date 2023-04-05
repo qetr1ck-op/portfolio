@@ -325,4 +325,16 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const profileLinks = {
+  linkedin: "https://www.linkedin.com/in/orestprystayko",
+  github: "https://github.com/qetr1ck-op",
+};
+
+export {
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  projects,
+  profileLinks,
+};

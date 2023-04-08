@@ -4,7 +4,7 @@ import React from "react";
 
 export function TechStack() {
   return (
-    <div>
+    <div className="max-w-7xl sm:px-16 px-6 mx-auto">
       <span className="hash-span"></span>
       <div className="flex flex-row flex-wrap justify-center gap-10">
         {technologies.slice(0, 14).map((technology) => (

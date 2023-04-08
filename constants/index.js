@@ -235,27 +235,27 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "Orest is an exceptional leader and an architect. His breadth of knowledge and understanding of frontend technology is remarkable. He was able to deliver projects with great precision and I'd highly recommend him.",
+    name: "Kerim Incedayi",
+    linkedinLink: "https://www.linkedin.com/in/cevatkerim/",
+    designation: "VP of Engineering",
+    company: "join.com",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+      "I have been working with Orest for almost 2 years. Orest was coordinating the team of FE developers and was always giving his professional opinion over certain features. As a result, this helped us to meet all the milestones in time and without putting any extra effort where it was not needed.",
+    name: "Khrystyna Galata",
+    linkedinLink: "https://www.linkedin.com/in/khrystyna-galata-76963649",
+    designation: "Strategic Business Analyst | Product Owner",
+    company: "Eleks",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
+      "Orest is highly experienced frontend developer, who is always up to date with the latest technologies. In addition he is an exceptional team lead who knows how to coach others to constantly improve themselves and deliver high-quality results on time. He is a real asset to our organization and it is a pleasure to work with him!",
+    name: "Florian Fuchs",
+    linkedinLink: "https://www.linkedin.com/in/florian-fuchs-06530b",
     designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    company: "doo GmbH",
   },
 ];
 

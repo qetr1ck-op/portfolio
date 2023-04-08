@@ -4,6 +4,7 @@ import { Overview } from "@/components/overview";
 import { Experience } from "@/components/experience";
 import { TechStack } from "@/components/tech-stack";
 import { Projects } from "@/components/projects";
+import { Feedbacks } from "@/components/feedbacks";
 
 export default function RootPage() {
   return (
@@ -17,6 +18,7 @@ export default function RootPage() {
         <Experience />
         <TechStack />
         <Projects />
+        <Feedbacks />
       </main>
     </div>
   );

@@ -5,6 +5,9 @@ import { Experience } from "@/components/experience";
 import { TechStack } from "@/components/tech-stack";
 import { Projects } from "@/components/projects";
 import { Feedbacks } from "@/components/feedbacks";
+import { StarsCanvas } from "@/components/starts-canvas";
+import { SectionWrapper } from "@/components/section-wrapper";
+import { ContactForm } from "@/components/contact-form";
 
 export default function RootPage() {
   return (
@@ -19,6 +22,12 @@ export default function RootPage() {
         <TechStack />
         <Projects />
         <Feedbacks />
+        <div className="relative z-0">
+          <SectionWrapper id="contact">
+            <ContactForm />
+          </SectionWrapper>
+          <StarsCanvas />
+        </div>
       </main>
     </div>
   );

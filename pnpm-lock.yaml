@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@emailjs/browser': ^3.11.0
   '@react-three/drei': ^9.56.24
   '@react-three/fiber': ^8.11.1
   '@types/node': ^18.15.11
@@ -24,6 +25,7 @@ specifiers:
   typescript: 4.9.5
 
 dependencies:
+  '@emailjs/browser': 3.11.0
   eslint: 8.36.0
   eslint-config-next: 13.2.4_vgl77cfdswitgr47lm5swmv43m
   framer-motion: 10.9.1_biqbaboplfbrettd7655fr4n2y
@@ -78,6 +80,11 @@ packages:
   /@chevrotain/utils/10.5.0:
     resolution: {integrity: sha512-hBzuU5+JjB2cqNZyszkDHZgOSrUUT8V3dhgRl8Q9Gp6dAj/H5+KILGjbhDpc3Iy9qmqlm/akuOI2ut9VUtzJxQ==}
     dev: true
+
+  /@emailjs/browser/3.11.0:
+    resolution: {integrity: sha512-RkY3FKZ3fPdK++OeF46mRTFpmmQWCHUVHZH209P3NE4D5sg2Atg7S2wa3gw5062Gl4clt4Wn5SyC4WhlVZC5pA==}
+    engines: {node: '>=14.0.0'}
+    dev: false
 
   /@emotion/is-prop-valid/0.8.8:
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}

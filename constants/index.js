@@ -79,10 +79,6 @@ const technologies = [
     icon: "/assets/tech/cypress.png",
   },
   {
-    name: "jest",
-    icon: "/assets/tech/jest.svg",
-  },
-  {
     name: "node-js",
     icon: "/assets/tech/node-js.svg",
   },
@@ -109,6 +105,10 @@ const technologies = [
   {
     name: "angular",
     icon: "/assets/tech/angular.svg",
+  },
+  {
+    name: "jest",
+    icon: "/assets/tech/jest.svg",
   },
   {
     name: "RxJS",

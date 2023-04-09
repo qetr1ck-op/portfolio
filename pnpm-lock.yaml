@@ -1,7 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@emailjs/browser': ^3.11.0
+  '@emailjs/nodejs': ^2.2.0
+  '@hookform/resolvers': ^3.0.1
   '@react-three/drei': ^9.56.24
   '@react-three/fiber': ^8.11.1
   '@types/node': ^18.15.11
@@ -18,24 +19,29 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.2.5
   react: 18.2.0
   react-dom: 18.2.0
+  react-hook-form: ^7.43.9
   react-tilt: ^1.0.2
   react-vertical-timeline-component: ^3.6.0
   tailwindcss: ^3.2.7
   three: ^0.150.1
   typescript: 4.9.5
+  zod: ^3.21.4
 
 dependencies:
-  '@emailjs/browser': 3.11.0
+  '@emailjs/nodejs': 2.2.0
+  '@hookform/resolvers': 3.0.1_react-hook-form@7.43.9
   eslint: 8.36.0
   eslint-config-next: 13.2.4_vgl77cfdswitgr47lm5swmv43m
   framer-motion: 10.9.1_biqbaboplfbrettd7655fr4n2y
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-hook-form: 7.43.9_react@18.2.0
   react-tilt: 1.0.2_a5pki22omvhg66elofc4io3beq
   react-vertical-timeline-component: 3.6.0_react@18.2.0
   three: 0.150.1
   typescript: 4.9.5
+  zod: 3.21.4
 
 devDependencies:
   '@react-three/drei': 9.57.3_u3iila23zl7kxrjj2wxuc6ojr4
@@ -81,8 +87,8 @@ packages:
     resolution: {integrity: sha512-hBzuU5+JjB2cqNZyszkDHZgOSrUUT8V3dhgRl8Q9Gp6dAj/H5+KILGjbhDpc3Iy9qmqlm/akuOI2ut9VUtzJxQ==}
     dev: true
 
-  /@emailjs/browser/3.11.0:
-    resolution: {integrity: sha512-RkY3FKZ3fPdK++OeF46mRTFpmmQWCHUVHZH209P3NE4D5sg2Atg7S2wa3gw5062Gl4clt4Wn5SyC4WhlVZC5pA==}
+  /@emailjs/nodejs/2.2.0:
+    resolution: {integrity: sha512-R5V14yCNmdQ5CrzE09BlsV/5s2DN8UcmxgBTo/Jk4T8TKxYT6s8lcEBUgfHSSvPRv/GGsNUknW7MNypgibVOpA==}
     engines: {node: '>=14.0.0'}
     dev: false
 
@@ -134,6 +140,14 @@ packages:
   /@eslint/js/8.36.0:
     resolution: {integrity: sha512-lxJ9R5ygVm8ZWgYdUweoq5ownDlJ4upvoWmO4eLxBYHdMo+vZ/Rx0EN6MbKWDJOSUGrqJy2Gt+Dyv/VKml0fjg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /@hookform/resolvers/3.0.1_react-hook-form@7.43.9:
+    resolution: {integrity: sha512-n5oOt0cLw9mQNW3/k9zWaPsNWQcc0k6Jpc7XUrg2Q/AqqsHp3IVa1juqHCxczXI6uXHBa69ILc4pdtsRGyuzsw==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.43.9_react@18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:
@@ -2454,6 +2468,15 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
+  /react-hook-form/7.43.9_react@18.2.0:
+    resolution: {integrity: sha512-AUDN3Pz2NSeoxQ7Hs6OhQhDr6gtF9YRuutGDwPQqhSUAHJSgGl2VeY3qN19MG0SucpjgDiuMJ4iC5T5uB+eaNQ==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-intersection-observer/8.34.0_react@18.2.0:
     resolution: {integrity: sha512-TYKh52Zc0Uptp5/b4N91XydfSGKubEhgZRtcg1rhTKABXijc4Sdr1uTp5lJ8TN27jwUsdXxjHXtHa0kPj704sw==}
     peerDependencies:
@@ -3049,6 +3072,10 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  /zod/3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: false
 
   /zstddec/0.0.2:

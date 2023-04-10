@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { slideIn } from "@/constants/motion";
 import { styles } from "@/constants/styles";
 import { EarthCanvas } from "@/components/earth-canvas";

@@ -328,6 +328,8 @@ const projects = [
 const profileLinks = {
   linkedin: "https://www.linkedin.com/in/orestprystayko",
   github: "https://github.com/qetr1ck-op",
+  twitter: "https://twitter.com/oprystaiko",
+  email: "mailto:orest@lazyjs.pro",
 };
 
 export {

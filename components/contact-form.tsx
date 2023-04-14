@@ -7,10 +7,12 @@ import { styles } from "@/constants/styles";
 import { EarthCanvas } from "@/components/earth-canvas";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 import {
   ContactFormSchema,
   contactFormSchema,
 } from "@/services/form-schemas.service";
+import { profileLinks } from "@/constants";
 
 export const ContactForm = () => {
   const {
@@ -47,7 +49,45 @@ export const ContactForm = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
+        <div className="flex justify-between">
+          <p className={styles.sectionSubText}>Get in touch</p>
+          <div className="flex gap-2 items-center">
+            <a href={profileLinks.github} target="_blank">
+              <Image
+                src="/assets/tech/github.svg"
+                alt="GitHub"
+                width="25"
+                height="25"
+                className="text-white"
+              />
+            </a>
+            <a href={profileLinks.linkedin} target="_blank">
+              <Image
+                src="/assets/tech/linkedin.svg"
+                alt="LinkedIn"
+                width="25"
+                height="25"
+              />
+            </a>
+            <a href={profileLinks.twitter} target="_blank">
+              <Image
+                src="/assets/tech/twitter.svg"
+                alt="LinkedIn"
+                width="25"
+                height="25"
+              />
+            </a>
+            <a href={profileLinks.email} target="_blank">
+              <Image
+                src="/assets/tech/email.svg"
+                alt="Email"
+                width="25"
+                height="25"
+              />
+            </a>
+          </div>
+        </div>
+
         <h3 className={styles.sectionHeadText}>Contact</h3>
 
         <form

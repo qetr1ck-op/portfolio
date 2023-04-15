@@ -14,7 +14,7 @@ const redis = new Redis({
 
 const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(1, "10 s"),
+  limiter: Ratelimit.slidingWindow(1, "30 s"),
   analytics: true,
 });
 
@@ -49,7 +49,7 @@ export async function POST(request: Request) {
   const body = await request.json();
 
   const identifier = "api";
-  const { success } = await ratelimit.limit(identifier);
+  const { success, limit, remaining } = await ratelimit.limit(identifier);
 
   if (!success) {
     return new Response("Too many requests ", {
@@ -68,6 +68,10 @@ export async function POST(request: Request) {
 
     return new Response("OK", {
       status: 201,
+      headers: {
+        "X-RateLimit-Limit": `${limit}`,
+        "X-RateLimit-Remaining": `${remaining}`,
+      },
     });
   } catch (error) {
     console.log({ error });

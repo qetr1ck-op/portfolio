@@ -26,7 +26,7 @@ export const ContactForm = () => {
 
   const onSubmit: SubmitHandler<ContactFormSchema> = async (data) => {
     try {
-      await fetch("/api/contact-form", {
+      const { status } = await fetch("/api/contact-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,6 +34,10 @@ export const ContactForm = () => {
         body: JSON.stringify(data),
       });
 
+      if (status === 429) {
+        alert("Ahh, too many requests. Please try again in a few minutes.");
+        return;
+      }
       alert("Thank you. I will get back to you as soon as possible.");
       resetForm();
     } catch {

@@ -4,27 +4,67 @@ import {
 } from "@/services/form-schemas.service";
 import { ZodError } from "zod";
 import emailjs from "@emailjs/nodejs";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
+
+const redis = new Redis({
+  url: process.env.REDIS_URL!,
+  token: process.env.REDIS_TOKEN!,
+});
+
+const ratelimit = new Ratelimit({
+  redis,
+  limiter: Ratelimit.slidingWindow(1, "10 s"),
+  analytics: true,
+});
+
+function sendEmail({
+  email,
+  message,
+  name,
+  toEmail = process.env.EMAILJS_TO_EMAIL!,
+}: {
+  email: string;
+  name: string;
+  message: string;
+  toEmail?: string;
+}) {
+  return emailjs.send(
+    process.env.EMAILJS_SERVICE_ID!,
+    process.env.EMAILJS_TEMPLATE_ID!,
+    {
+      from_name: name,
+      from_email: email,
+      to_email: toEmail,
+      message: message,
+    },
+    {
+      publicKey: process.env.EMAILJS_PUBLIC_KEY!,
+      privateKey: process.env.EMAILJS_PRIVATE_KEY!,
+    }
+  );
+}
 
 export async function POST(request: Request) {
   const body = await request.json();
-  console.log({ body });
+
+  const identifier = "api";
+  const { success } = await ratelimit.limit(identifier);
+
+  if (!success) {
+    return new Response("Too many requests ", {
+      status: 429,
+    });
+  }
+
   try {
     contactFormSchema.parse(body);
 
-    await emailjs.send(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-      {
-        from_name: body.name,
-        from_email: body.email,
-        to_email: "orestprustayko@gmail.com",
-        message: body.message,
-      },
-      {
-        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
-        privateKey: process.env.NEXT_PUBLIC_EMAILJS_PRIVATE_KEY!,
-      }
-    );
+    await sendEmail({
+      email: body.email,
+      message: body.message,
+      name: body.name,
+    });
 
     return new Response("OK", {
       status: 201,

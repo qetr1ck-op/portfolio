@@ -19,7 +19,7 @@ const useRouterHash = () => {
 
 export function debounce<F extends (...params: any[]) => void>(
   fn: F,
-  delay: number = 30
+  delay: number = 10
 ) {
   let timeoutID: number;
   return function (this: any, ...args: any[]) {
@@ -33,7 +33,7 @@ const useIsScrolled = () => {
 
   useEffect(() => {
     const debouncedHandleScroll = debounce(function handleScroll() {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 70);
     });
 
     window.addEventListener("scroll", debouncedHandleScroll);

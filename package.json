@@ -11,6 +11,8 @@
   "dependencies": {
     "@emailjs/nodejs": "^2.2.0",
     "@hookform/resolvers": "^3.0.1",
+    "@upstash/ratelimit": "^0.4.1",
+    "@upstash/redis": "^1.20.3",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.9.1",

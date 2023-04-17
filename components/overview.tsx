@@ -60,18 +60,14 @@ export const Overview = () => {
           variants={fadeIn("", "spring", 0.1, 2)}
           className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Experienced Senior Full Stack Developer and Tech Lead with over 10
-          years of expertise in web development using JavaScript, React, and
-          Node.js. Skilled in leading and mentoring teams of developers to build
-          scalable and responsive web applications using modern front-end
-          frameworks and back-end technologies. Possessing a strong
-          understanding of software development life cycle and agile
-          methodologies. Proven track record of delivering high-quality code and
-          solving complex problems. Passionate about staying up-to-date with
-          emerging technologies and trends in the industry. Responsible for
-          guiding technical decisions, setting development standards, and
-          ensuring code quality. Seeking a challenging role in a dynamic
-          organization that values innovation, collaboration, and leadership.
+          Experienced JS Developer and Tech Lead with 10+ years of expertise in
+          web development. Skilled in leading teams to build scalable,
+          responsive web apps using modern frameworks and technologies.
+          Proficient in software development life cycle, agile methodologies,
+          and delivering high-quality code. Passionate about emerging
+          technologies and guiding technical decisions. Seeking a challenging
+          role in an innovative, collaborative, and leadership-driven
+          organization.
         </motion.p>
 
         <div className="mt-20 flex flex-wrap gap-10">

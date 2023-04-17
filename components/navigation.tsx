@@ -38,6 +38,8 @@ const useIsScrolled = () => {
 
     window.addEventListener("scroll", debouncedHandleScroll);
 
+    debouncedHandleScroll();
+
     return () => {
       window.removeEventListener("scroll", debouncedHandleScroll);
     };
@@ -106,7 +108,7 @@ export function Navigation() {
                       routerHash === id ? "text-white" : "text-secondary"
                     } hover:text-white`}
                   >
-                    <Link
+                    <a
                       href={`#${id}`}
                       onClick={() => {
                         setRouterHash(id);
@@ -114,7 +116,7 @@ export function Navigation() {
                       }}
                     >
                       {title}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

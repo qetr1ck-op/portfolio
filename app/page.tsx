@@ -8,6 +8,7 @@ import { Feedbacks } from "@/components/feedbacks";
 import { StarsCanvas } from "@/components/starts-canvas";
 import { SectionWrapper } from "@/components/section-wrapper";
 import { ContactForm } from "@/components/contact-form";
+import { CV } from "@/components/cv";
 
 export default function RootPage() {
   return (
@@ -22,6 +23,9 @@ export default function RootPage() {
         <TechStack />
         <Projects />
         <Feedbacks />
+        <SectionWrapper id="cv">
+          <CV />
+        </SectionWrapper>
         <div className="relative z-0">
           <SectionWrapper id="contact">
             <ContactForm />

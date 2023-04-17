@@ -53,6 +53,11 @@ export function Navigation() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const isScrolled = useIsScrolled();
 
+  useEffect(() => {
+    if (!routerHash) return;
+    document.title = `lazyjs.pro | ${routerHash}`;
+  }, [routerHash]);
+
   return (
     <nav
       className={`w-full py-5 px-6 sm:px-16  fixed top-0 z-20 flex items-center ${

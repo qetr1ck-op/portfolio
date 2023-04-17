@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "@/constants/motion";
 import { styles } from "@/constants/styles";
-import { profileLinks } from "@/constants/index";
 import React from "react";
+
+const pdfFile = "/assets/cv/cv_orest_prystaiko.pdf";
 
 export function CV() {
   return (
@@ -23,12 +24,27 @@ export function CV() {
           variants={fadeIn("", "spring", 0.1, 2)}
           className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
+          Here is the latest version of my resume.
+        </motion.p>
+        <motion.p
+          variants={fadeIn("", "spring", 0.1, 2)}
+          className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        >
+          👉{" "}
           <a
-            href="/assets/cv/latest.pdf"
+            href={pdfFile}
             target="_blank"
             className="hover:underline hover:text-white-100"
           >
-            👉 Here is the latest version of my resume.
+            Preview
+          </a>{" "}
+          |{" "}
+          <a
+            href={pdfFile}
+            download
+            className="hover:underline hover:text-white-100"
+          >
+            Download
           </a>
         </motion.p>
       </motion.section>

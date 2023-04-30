@@ -16,21 +16,15 @@ export function CV() {
         viewport={{ once: true, amount: 0.25 }}
       >
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>Just here to grab my CV?</p>
-          <h2 className={styles.sectionHeadText}>Curriculum Vitae</h2>
+          <p className={styles.sectionSubText}>
+            Here is the latest version of my resume
+          </p>
+          <h2 className={styles.sectionHeadText}>CV</h2>
         </motion.div>
-
         <motion.p
           variants={fadeIn("", "spring", 0.1, 2)}
           className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Here is the latest version of my resume.
-        </motion.p>
-        <motion.p
-          variants={fadeIn("", "spring", 0.1, 2)}
-          className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-        >
-          👉{" "}
           <a
             href={pdfFile}
             target="_blank"

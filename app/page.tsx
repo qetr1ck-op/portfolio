@@ -10,6 +10,8 @@ import { SectionWrapper } from "@/components/section-wrapper";
 import { ContactForm } from "@/components/contact-form";
 import { CV } from "@/components/cv";
 
+import "../types/env-vars";
+
 export default function RootPage() {
   return (
     <div className="bg-primary">

@@ -8,6 +8,7 @@ import { EarthCanvas } from "@/components/earth-canvas";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import {
   ContactFormSchema,
   contactFormSchema,
@@ -23,9 +24,13 @@ export const ContactForm = () => {
   } = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
   });
+  const [captchaToken, setCaptchaToken] = React.useState<string | null>(null);
+  const captchaRef = React.useRef<HCaptcha | null>(null);
 
   const onSubmit: SubmitHandler<ContactFormSchema> = async (data) => {
     try {
+      await captchaRef.current?.execute({ async: true });
+
       const { status } = await fetch("/api/contact-form", {
         method: "POST",
         headers: {
@@ -38,6 +43,7 @@ export const ContactForm = () => {
         alert("Ahh, too many requests. Please try again in a few minutes.");
         return;
       }
+
       alert("Thank you. I will get back to you as soon as possible.");
       resetForm();
     } catch {
@@ -130,6 +136,15 @@ export const ContactForm = () => {
           {errors.message && (
             <div className="text-red-800 px-6">{errors.message?.message}</div>
           )}
+
+          <HCaptcha
+            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
+            ref={captchaRef}
+            onVerify={(token) => setCaptchaToken(token)}
+            onExpire={() => setCaptchaToken(null)}
+            onError={() => setCaptchaToken(null)}
+            size="invisible"
+          />
 
           <button
             type="submit"

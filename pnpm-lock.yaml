@@ -4,6 +4,9 @@ dependencies:
   '@emailjs/nodejs':
     specifier: ^2.2.0
     version: 2.2.0
+  '@hcaptcha/react-hcaptcha':
+    specifier: ^1.8.1
+    version: 1.8.1(react-dom@18.2.0)(react@18.2.0)
   '@hookform/resolvers':
     specifier: ^3.0.1
     version: 3.0.1(react-hook-form@7.43.9)
@@ -169,6 +172,17 @@ packages:
   /@eslint/js@8.36.0:
     resolution: {integrity: sha512-lxJ9R5ygVm8ZWgYdUweoq5ownDlJ4upvoWmO4eLxBYHdMo+vZ/Rx0EN6MbKWDJOSUGrqJy2Gt+Dyv/VKml0fjg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /@hcaptcha/react-hcaptcha@1.8.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-33tIl77HgeahiQ6R0+JPDA8cGBBv95cIVcdOcFVwiGCJhrOxyiOQetCdEUNTDS13xrkvIP29K/PrqLXXSbKl6Q==}
+    peerDependencies:
+      react: '>= 16.3.0'
+      react-dom: '>= 16.3.0'
+    dependencies:
+      '@babel/runtime': 7.21.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@hookform/resolvers@3.0.1(react-hook-form@7.43.9):

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 
 import { author, navLinks } from "@/constants";
@@ -48,7 +47,7 @@ const useIsScrolled = () => {
   return isScrolled;
 };
 
-export function Navigation() {
+export default function Navigation() {
   const [routerHash, setRouterHash] = useState(useRouterHash());
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const isScrolled = useIsScrolled();

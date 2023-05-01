@@ -1,4 +1,5 @@
-import { Navigation } from "@/components/navigation";
+import dynamic from "next/dynamic";
+
 import { Welcome } from "@/components/welcome";
 import { Overview } from "@/components/overview";
 import { Experience } from "@/components/experience";
@@ -11,6 +12,10 @@ import { ContactForm } from "@/components/contact-form";
 import { CV } from "@/components/cv";
 
 import "../types/env-vars";
+
+const Navigation = dynamic(() => import("@/components/navigation"), {
+  ssr: false,
+});
 
 export default function RootPage() {
   return (

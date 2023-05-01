@@ -99,6 +99,14 @@ export const ContactForm: React.FC<{ withCaptcha: boolean }> = ({
                 height="25"
               />
             </a>
+            <a href={profileLinks.telegram} target="_blank">
+              <Image
+                src="/assets/contact-with/telegram.svg"
+                alt="Email"
+                width="25"
+                height="25"
+              />
+            </a>
           </div>
         </div>
 

@@ -334,6 +334,7 @@ const profileLinks = {
   github: "https://github.com/qetr1ck-op",
   twitter: "https://twitter.com/oprystaiko",
   email: "mailto:orest@lazyjs.pro",
+  telegram: "https://t.me/qetr1ck",
 };
 
 export {

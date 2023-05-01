@@ -19,27 +19,29 @@ const Navigation = dynamic(() => import("@/components/navigation"), {
 
 export default function RootPage() {
   return (
-    <div className="bg-primary">
-      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-        <Navigation />
-        <Welcome />
-      </div>
-      <main>
-        <Overview />
-        <Experience />
-        <TechStack />
-        <Projects />
-        <Feedbacks />
-        <SectionWrapper id="cv">
-          <CV />
-        </SectionWrapper>
-        <div className="relative z-0">
-          <SectionWrapper id="contact">
-            <ContactForm />
-          </SectionWrapper>
-          <StarsCanvas />
+    <body suppressHydrationWarning={true}>
+      <div className="bg-primary">
+        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+          <Navigation />
+          <Welcome />
         </div>
-      </main>
-    </div>
+        <main>
+          <Overview />
+          <Experience />
+          <TechStack />
+          <Projects />
+          <Feedbacks />
+          <SectionWrapper id="cv">
+            <CV />
+          </SectionWrapper>
+          <div className="relative z-0">
+            <SectionWrapper id="contact">
+              <ContactForm withCaptcha={false} />
+            </SectionWrapper>
+            <StarsCanvas />
+          </div>
+        </main>
+      </div>
+    </body>
   );
 }

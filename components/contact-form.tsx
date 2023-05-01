@@ -15,7 +15,9 @@ import {
 } from "@/services/form-schemas.service";
 import { profileLinks } from "@/constants";
 
-export const ContactForm = () => {
+export const ContactForm: React.FC<{ withCaptcha: boolean }> = ({
+  withCaptcha,
+}) => {
   const {
     register,
     handleSubmit,
@@ -29,7 +31,9 @@ export const ContactForm = () => {
 
   const onSubmit: SubmitHandler<ContactFormSchema> = async (data) => {
     try {
-      await captchaRef.current?.execute({ async: true });
+      if (withCaptcha) {
+        await captchaRef.current?.execute({ async: true });
+      }
 
       const { status } = await fetch("/api/contact-form", {
         method: "POST",
@@ -137,15 +141,6 @@ export const ContactForm = () => {
             <div className="text-red-800 px-6">{errors.message?.message}</div>
           )}
 
-          <HCaptcha
-            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
-            ref={captchaRef}
-            onVerify={(token) => setCaptchaToken(token)}
-            onExpire={() => setCaptchaToken(null)}
-            onError={() => setCaptchaToken(null)}
-            size="invisible"
-          />
-
           <button
             type="submit"
             className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
@@ -162,6 +157,17 @@ export const ContactForm = () => {
       >
         <EarthCanvas />
       </motion.div>
+
+      {withCaptcha && (
+        <HCaptcha
+          sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
+          ref={captchaRef}
+          onVerify={(token) => setCaptchaToken(token)}
+          onExpire={() => setCaptchaToken(null)}
+          onError={() => setCaptchaToken(null)}
+          size="invisible"
+        />
+      )}
     </div>
   );
 };

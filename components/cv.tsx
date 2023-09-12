@@ -5,7 +5,7 @@ import { fadeIn, textVariant } from "@/constants/motion";
 import { styles } from "@/constants/styles";
 import React from "react";
 
-const pdfFile = "/assets/cv/cv_orest_prystaiko.pdf";
+const pdfFile = "/assets/cv/cv.pdf";
 
 export function CV() {
   return (
